@@ -14,7 +14,10 @@ export default function Feedback() {
       message,
     });
     console.log(response.data);
-    alert(response.data);
+    alert("Thankyou for feedback");
+    setName("");
+    setMessage("");
+    
   }
   function onNameChange(e) {
     setName(e.target.value);
@@ -27,10 +30,10 @@ export default function Feedback() {
   return (
     <div>
       <form onSubmit={onFormSubmit}>
-        <input type="text" placeholder="name" onChange={onNameChange} />
+        <input type="text" placeholder="name" value={name} onChange={onNameChange} />
         <input
           type="text"
-          placeholder="enter message"
+          placeholder="enter message" value={message}
           onChange={onMessageChange}
         />
         <button type="submit">Submit</button>
